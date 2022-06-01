@@ -1,0 +1,49 @@
+\message{ !name(beamerTemplate.tex)}\documentclass{beamer}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usetheme{Madrid}
+
+%Information to be included in the title page:
+\title[Title]{Title}
+\subtitle{Subtitle}
+\author[Author]{Author}
+\institute{Institution}
+\date{\today}
+
+
+
+\begin{document}
+
+\message{ !name(beamerTemplate.tex) !offset(-3) }
+
+
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Table of contents}
+	\tableofcontents
+\end{frame}
+
+\begin{frame}
+\frametitle{Two-column slide}
+\begin{columns}
+	
+	\column{0.5\textwidth}
+	This is a text in first column with a citation \citet{einstein} and another \citep{dirac}.
+	\begin{itemize}
+		\item First item
+		\item Second item
+	\end{itemize}
+	
+	\column{0.5\textwidth}
+	Here is another citation \citep{knuthwebsite}
+\end{columns}
+\end{frame}
+\begin{frame}
+  \frametitle{References}
+  \bibliographystyle{chicago}
+  \bibliography{beamerTemplate}
+\end{frame}
+\end{document}
+\message{ !name(beamerTemplate.tex) !offset(-49) }

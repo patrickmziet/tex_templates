@@ -1,0 +1,30 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,width=120mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage{lipsum}
+\usepackage{palatino}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{soul}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor, colortbl}
+\usepackage{multirow}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\usepackage[colorlinks=true,linkcolor=darkblue,allcolors=darkblue]{hyperref} 
+
+% Title
+\title{\sc{Essay title}}
+\author{Author's Name}
+\date{\today}
+
+\begin{document}
+\maketitle
+\lipsum[1]
+\begin{align}
+  \label{eq:1}
+  f(x) = e^x
+\end{align}
+\lipsum[2]
+What about refering in text to equation~\ref{eq:1}.
+\end{document}

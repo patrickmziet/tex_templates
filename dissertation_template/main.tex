@@ -1,0 +1,92 @@
+\documentclass[12pt,twoside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{images/}} % where to find images
+% formatting page
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % clears all headers
+\fancyhead[RO,LE]{\leftmark\hfill\thepage}
+\fancyfoot{}
+%\fancyfoot[CE,CO]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Other packages
+\usepackage{lipsum}
+
+% Figures, subfigures and tables
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Bibliographies with Biblatex
+% all information about the recognised source types and all the keywords you can use can be found in the biblatex documentation. More citation commands found here too.
+% Prenotes and postnotes use 
+% - TEXT\parencite[see][p10]{latexcompanion}
+% - TEXT\parencite[compare][]{knuthwebsite}
+% - TEXT\parencite[e.g.][page 300]{einstein}
+% \usepackage[style=authoryear,sorting=ynt]{biblatex}
+% \addbibresource{references.bib}
+% \renewcommand*{\nameyeardelim}{\addcomma\space}
+\usepackage{palatino} % font
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{algorithmic}
+\usepackage{natbib}
+\usepackage{soul}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\usepackage[colorlinks=true,linkcolor=darkblue,allcolors=darkblue]{hyperref} % makes references clickable
+
+% theorems, remarks, lemmas and definitions
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+
+% Figure and equation numbering
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{theorem}{section}
+\numberwithin{definition}{section}
+
+
+\begin{document}
+	\include{titlepage}
+	\frontmatter
+	\input{abstract}
+	\newpage
+	\input{declaration}
+	\newpage
+	\input{acknowledgements}
+	\newpage
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\newpage
+	\input{notation}
+	\newpage
+	\input{abbreviations}
+	\newpage
+	\mainmatter
+	\chapter{Introduction}
+	\pagestyle{fancy} % makes page styles normal again
+	\input{chapters/introduction.tex}
+	
+	\chapter{My second chapter}
+	\input{chapters/chapter02}
+	
+	\chapter{Conclusion}
+	\input{chapters/conclusion}
+		
+%	\backmatter
+	\appendix
+	\chapter{Appendix title}
+	\input{chapters/appendix}
+	\bibliographystyle{chicago}     
+        \bibliography{references}
+\end{document}
